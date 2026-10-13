@@ -31267,7 +31267,7 @@ static void ma_device_sink_info_callback(ma_pa_context* pPulseContext, const ma_
 {
     ma_pa_sink_info* pInfoOut;
 
-    if (endOfList > 0) {
+    if (endOfList != 0) {  /* libpulse reports an error with endOfList < 0 and a NULL pInfo. */
         return;
     }
 
@@ -31291,7 +31291,7 @@ static void ma_device_source_info_callback(ma_pa_context* pPulseContext, const m
 {
     ma_pa_source_info* pInfoOut;
 
-    if (endOfList > 0) {
+    if (endOfList != 0) {  /* libpulse reports an error with endOfList < 0 and a NULL pInfo. */
         return;
     }
 
@@ -31316,7 +31316,7 @@ static void ma_device_sink_name_callback(ma_pa_context* pPulseContext, const ma_
 {
     ma_device* pDevice;
 
-    if (endOfList > 0) {
+    if (endOfList != 0) {  /* libpulse reports an error with endOfList < 0 and a NULL pInfo. */
         return;
     }
 
@@ -31332,7 +31332,7 @@ static void ma_device_source_name_callback(ma_pa_context* pPulseContext, const m
 {
     ma_device* pDevice;
 
-    if (endOfList > 0) {
+    if (endOfList != 0) {  /* libpulse reports an error with endOfList < 0 and a NULL pInfo. */
         return;
     }
 
@@ -31551,7 +31551,7 @@ static void ma_context_get_device_info_sink_callback__pulse(ma_pa_context* pPuls
 {
     ma_context_get_device_info_callback_data__pulse* pData = (ma_context_get_device_info_callback_data__pulse*)pUserData;
 
-    if (endOfList > 0) {
+    if (endOfList != 0) {  /* libpulse reports an error with endOfList < 0 and a NULL pInfo. */
         return;
     }
 
@@ -31588,7 +31588,7 @@ static void ma_context_get_device_info_source_callback__pulse(ma_pa_context* pPu
 {
     ma_context_get_device_info_callback_data__pulse* pData = (ma_context_get_device_info_callback_data__pulse*)pUserData;
 
-    if (endOfList > 0) {
+    if (endOfList != 0) {  /* libpulse reports an error with endOfList < 0 and a NULL pInfo. */
         return;
     }
 
